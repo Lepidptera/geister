@@ -1,0 +1,79 @@
+body{
+    background-color: darkslategrey;
+    color: azure;
+}
+
+.flex{
+    display: flex;
+}
+
+#board{
+    width: 800px;
+    height: auto;
+    background-color: black;
+}
+
+td{
+    width:100px;
+    height:100px;
+    background-color: darkgreen;
+}
+
+.circle{
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: black;/*背景色*/
+}
+
+.color0{
+    background-color: darkgreen;
+}
+
+.color1{
+    background-color: black;
+}
+
+.color2{
+    background-color: white;
+}
+
+.btn-submit{
+    width: 95px;
+    height: 95px;
+    border-radius: 10px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    background-image: none;
+    background-color: transparent;
+    color: transparent;
+}
+
+#status{
+    width: 500px;
+    height: 800px;
+    margin-left: 50px;
+    text-align: center;
+    background-color:forestgreen;
+    color: white;
+}
+
+.status-text{
+    font-size: 30px;
+}
+
+#status-content{
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.left{
+    margin-right: auto;
+}
+
+.right{
+    margin-left: auto;
+}
