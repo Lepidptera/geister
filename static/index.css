@@ -8,7 +8,7 @@ body{
 }
 
 #board{
-    width: 800px;
+    width: 600px;
     height: auto;
     background-color: black;
 }
@@ -16,26 +16,50 @@ body{
 td{
     width:100px;
     height:100px;
-    background-color: darkgreen;
+    background-color:darkblue;
 }
 
 .circle{
     width: 90px;
     height: 90px;
     border-radius: 50%;
-    background: black;/*背景色*/
+    margin: auto;
+    background: black;
 }
 
 .color0{
-    background-color: darkgreen;
+    background-color: transparent;
 }
 
 .color1{
-    background-color: black;
+    background-color: blue;
 }
 
 .color2{
-    background-color: white;
+    background-color: red;
+}
+
+.color3{
+    background-color: black;
+}
+
+.color4{
+    background-color: black;
+}
+
+
+.select0{
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    background-color: transparent;
+}
+
+.select1{
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    background-color: rgb(229, 168, 14, 0.5);
 }
 
 .btn-submit{
