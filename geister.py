@@ -22,7 +22,6 @@ row7 = [0,0,0,0,0,0,0,0]
 
 board = [row0,row1,row2,row3,row4,row5,row6,row7]
 
-#select_place = (5,2)
 
 def place_select(board,select_place):
 
@@ -60,6 +59,13 @@ def place_select(board,select_place):
     for range_place in available_place + beatable_place + unbeatable_place:
         range_board[range_place[0]][range_place[1]] = 1
 
+    # exception
+    if board[select_place[0]][select_place[1]] != 1 and board[select_place[0]][select_place[1]] != 2:
+        range_board = init_board
+        available_place = []
+        beatable_place = []
+        unbeatable_place = []
+
     print(available_place,"available_place")
     print(beatable_place,"beatable_place")
     print(unbeatable_place,"unbeatable_place")
@@ -75,36 +81,41 @@ def place_select(board,select_place):
 
     return range_board,select_color,available_place,beatable_place,unbeatable_place
 
-#output_place = (4,3)
 
 def place_output(board,select_place,output_place,
                 available_place,beatable_place,unbeatable_place,select_color):
 
-    handheld = []
+    handheld_blue = []
+    handheld_red = []
 
     # escape
     if output_place[0] == 0:
         board[select_place[0]][select_place[1]] = 0
+        place = True
         print("congratulate")
     # available
     elif output_place in available_place:
         board[output_place[0]][output_place[1]] = select_color
         board[select_place[0]][select_place[1]] = 0
+        place = True
         print("available")
     # beatable
     elif output_place in beatable_place:
         board[output_place[0]][output_place[1]] = select_color
         board[select_place[0]][select_place[1]] = 0
-        handheld.append(3)
+        handheld_blue.append(3)
+        place = True
         print("beated")
     # unbeatable
     elif output_place in unbeatable_place:
         board[output_place[0]][output_place[1]] = select_color
         board[select_place[0]][select_place[1]] = 0
-        handheld.append(4)
+        handheld_red.append(4)
+        place = True
         print("unbeated")
     # unavailable
     else:
+        place = False
         print("unavailable")
 
     print("#",row0)
@@ -115,5 +126,20 @@ def place_output(board,select_place,output_place,
     print("#",row5)
     print("#",row6)
     print("#",row7)
+
+    return board,handheld_blue,handheld_red,place
+
+def opponent(board,opponent_select_place,opponent_output_place,opponent_select_color):
+    board[int(opponent_select_place[0])][int(opponent_select_place[1])] = 0
+    board[int(opponent_output_place[0])][int(opponent_output_place[1])] = opponent_select_color
+
+    print("##",row0)
+    print("##",row1)
+    print("##",row2)
+    print("##",row3)
+    print("##",row4)
+    print("##",row5)
+    print("##",row6)
+    print("##",row7)
 
     return board

@@ -101,3 +101,12 @@ td{
 .right{
     margin-left: auto;
 }
+
+.popup{
+    font-size: x-large;
+    width: auto;
+    height: auto;
+    padding: 10px;
+    background-color: cornsilk;
+    color: crimson;
+}
